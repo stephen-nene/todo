@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import './App.css';
-import Login from '../login/Login';
+import Login from '../components/login/Login';
+import Home from "../components/todo/Home";
 
 function App() {
   const [loggedIn, setIsLoggeIn] = useState(true);
+
+
   if (loggedIn === true){
     return (
       <div className="App">
-        <Login/>
+        <Home/>
       </div>
     );
   }else{
-    return <Login/>
+    return <Login setIsLoggeIn={setIsLoggeIn}/>
   }
 
 }
