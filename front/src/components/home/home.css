@@ -30,8 +30,9 @@
     margin: 0 5px;
     width: 10rem;
     padding: 5px;
-    /* border: 2px solid aquamarine; */
+    border: 2px solid;
     background-color: transparent;
+    border-radius: 30px;
   }
 
   .summary {
@@ -67,7 +68,19 @@
     background-color: rgb(194, 101, 101);
     border: 2px solid rgb(194, 101, 101);
   }
-  #delete.icons {
-    /* filter: none; */
-    color: blue;
+  #done {
+
+    background-color: transparent;
+    border-color: green;
   }
+
+  #done:hover {
+    background-color: darkgreen;
+    border: 2px solid darkgreen;
+  }
+
+  .done:hover  {
+    filter: brightness(0) invert(1);
+  }
+
+
