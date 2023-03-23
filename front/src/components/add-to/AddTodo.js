@@ -7,7 +7,7 @@ function AddTodo(){
     return (
         <div>
             <NavBar />
-            <h1>Profiles</h1>
+            <h1>Add Todo</h1>
         </div>
     )
 }
