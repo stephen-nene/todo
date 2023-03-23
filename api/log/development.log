@@ -202,3 +202,206 @@ ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.
           ^^^^^):
   
 app/controllers/users_controller.rb:4:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:04:53 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 1ms (Allocations: 580)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/users_controller.rb:4:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:05:44 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 11095)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "steve", email: "stevekid705@gmail.com", password_digest: [FILTERED], created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:5:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:06:26 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms | Allocations: 8136)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "stevo", email: "stevekid705@gmail.com", password_digest: [FILTERED], created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:5:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:06:41 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms | Allocations: 15232)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "stevo", email: "stevekid705@gmail.com", password_digest: [FILTERED], created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:5:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:08:17 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.3ms | Allocations: 11274)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "stevo", email: "stevekid705@gmail.com", password_digest: [FILTERED], created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:5:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:08:40 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms | Allocations: 15232)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "stevo", email: "stevekid705@gmail.com", password_digest: [FILTERED], created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:5:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:09:25 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 20ms (Views: 3.9ms | ActiveRecord: 1.2ms | Allocations: 11283)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:09:46 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 9ms (Views: 0.9ms | ActiveRecord: 1.2ms | Allocations: 6385)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:10:00 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"stevo", "email"=>"stevekid705@gmail.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevo"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "stevo"], ["email", "stevekid705@gmail.com"], ["password_digest", "mnbvcxz"], ["created_at", "2023-03-23 22:10:00.814853"], ["updated_at", "2023-03-23 22:10:00.814853"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 17ms (Views: 0.5ms | ActiveRecord: 2.7ms | Allocations: 6424)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230322074057)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322074057"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-23 22:11:20.763122"], ["updated_at", "2023-03-23 22:11:20.763122"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 01:11:40 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"testuser", "email"=>"testuser@example.com", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"testuser", "email"=>"testuser@example.com", "password_digest"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "testuser"], ["email", "testuser@example.com"], ["password_digest", "password123"], ["created_at", "2023-03-23 22:11:40.389708"], ["updated_at", "2023-03-23 22:11:40.389708"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 13ms (Views: 0.4ms | ActiveRecord: 3.0ms | Allocations: 8054)
+
+
