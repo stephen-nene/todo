@@ -6,7 +6,6 @@ function AddTodo(){
 
     return (
         <div>
-            <NavBar />
             <h1>Profiles</h1>
         </div>
     )
