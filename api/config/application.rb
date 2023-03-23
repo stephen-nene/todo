@@ -25,8 +25,8 @@ module Api
     config.load_defaults 6.1
 
     # cookies and sessions
-    config.middleware.use ActionDispatch::cookies
-    config.middleware.use ActionDispatch::Sessions::CookieStore
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     config.action_dispatch.cookies_same_site_protection = :strict
 
     # Configuration for the application, engines, and railties goes here.
