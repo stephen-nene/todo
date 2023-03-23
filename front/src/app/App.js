@@ -8,7 +8,7 @@ import AddTodo from "../components/add-todo/AddTodo";
 import Profile from "../components/profile/Profile";
 
 function App() {
-  const [loggedIn, setIsLoggeIn] = useState(true);
+  const [loggedIn, setIsLoggeIn] = useState(false);
 
 
   if (loggedIn === false){

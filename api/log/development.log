@@ -68,3 +68,137 @@ Processing by UsersController#register as */*
 Completed 201 Created in 38ms (Views: 0.7ms | ActiveRecord: 7.8ms | Allocations: 8030)
 
 
+Started GET "/ws" for ::1 at 2023-03-23 23:23:40 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-23 23:23:48 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2023-03-23 23:24:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/profile" for ::1 at 2023-03-23 23:24:15 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+Started GET "/favicon.ico" for ::1 at 2023-03-23 23:24:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2023-03-23 23:24:40 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.5ms | Allocations: 216)
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 2060)
+
+
+Started GET "/" for ::1 at 2023-03-24 00:28:13 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 19.9ms | Allocations: 217)
+Completed 200 OK in 33ms (Views: 22.3ms | Allocations: 947)
+
+
+Started POST "/user" for 127.0.0.1 at 2023-03-24 00:43:55 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevemene@jsjs.dkd", "user"=>{"username"=>"steve", "email"=>"stevemene@jsjs.dkd"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevemene@jsjs.dkd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 1.6ms | Allocations: 15268)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "steve", email: "stevemene@jsjs.dkd", password_digest: nil, created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:4:in `register'
+Started POST "/user" for 127.0.0.1 at 2023-03-24 00:47:07 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 00:47:33 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevemene@jsjs.dkd", "user"=>{"username"=>"steve", "email"=>"stevemene@jsjs.dkd"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevemene@jsjs.dkd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 3.0ms | Allocations: 11306)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "steve", email: "stevemene@jsjs.dkd", password_digest: nil, created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:4:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 00:54:43 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameters: :password, :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:4:in `register'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 11162)
+
+
+  
+NoMethodError (undefined method `password' for #<User id: nil, username: "steve", email: "stevekid705@gmail.com", password_digest: nil, created_at: nil, updated_at: nil>
+Did you mean?  password_digest):
+  
+app/controllers/users_controller.rb:4:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 00:55:34 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms | Allocations: 3331)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/users_controller.rb:4:in `register'
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 00:56:34 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"steve", "email"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"steve", "email"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms | Allocations: 3294)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'password' for User.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/users_controller.rb:4:in `register'

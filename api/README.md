@@ -21,27 +21,80 @@
  - **NeneCorp** **<span>&copy; 2023</span>**
 ---------
 
-# README
+# screenshot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### a. For POST /signup (register):
 
-Things you may want to cover:
+If the user was successfully registered:
 
-* Ruby version
+HTTP status code: 201 Created
 
-* System dependencies
+Response body:
 
-* Configuration
+json
+```json
+{
+  "message": "Registration successful",
+  "status": "created",
+  "data": {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john@example.com"
+  }
+}
+```
+If the registration failed due to validation errors:
 
-* Database creation
+HTTP status code: 422 Unprocessable Entity
 
-* Database initialization
+Response body:
 
-* How to run the test suite
+json
+```json
+{
+  "message": "Registration failed",
+  "status": "unprocessable_entity",
+  "data": {
+    "username": [
+      "can't be blank"
+    ],
+    "email": [
+      "can't be blank",
+      "has already been taken"
+    ]
+  }
+}
+```
+#### b. For POST /login:
 
-* Services (job queues, cache servers, search engines, etc.)
+If the login was successful:
 
-* Deployment instructions
+HTTP status code: 200 OK
 
-* ...
+Response body:
+
+json
+```json
+{
+  "message": "Login was successful",
+  "status": "ok",
+  "data": {
+    "id": 1,
+    "username": "john_doe",
+    "email": "john@example.com"
+  }
+}z
+```
+If the login failed due to invalid credentials:
+
+HTTP status code: 401 Unauthorized
+
+Response body:
+
+json
+```json
+{
+  "message": "Invalid username/email or password",
+  "status": "unauthorized"
+}
+```
