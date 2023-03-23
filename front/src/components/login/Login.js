@@ -10,7 +10,7 @@ export default function Login() {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const fetchLogin = () => {
-    console.log(`logging in: \nusername/email: ${username}\npassword: ${password}`);
+    console.log(`logging in: \nusernamel: ${username}\npassword: ${password}`);
   };
 
   const fetchSignUp = async () => {
@@ -25,7 +25,7 @@ export default function Login() {
         body: JSON.stringify({
             username,
             email,
-            password_digest: password,
+            password: password,
         }),
       });
 

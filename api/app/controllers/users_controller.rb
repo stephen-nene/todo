@@ -1,26 +1,24 @@
 class UsersController < ApplicationController
 
   def register
-    user = User.new(user_params)
+    user = User.new(register_params)
     if user.save
-      app_response message: "Registration successful", status: :created, data: user.as_json(except: :password_digest)
+      app_response message: "Registration successful", status: :created, data: user.as_json(except: :password)
     else
       app_response message: "Registration failed", status: :unprocessable_entity, data: user.errors
     end
   end
 
-
-  def login
-    sql = "username = :username OR email = :email"
-    user = User.where(sql, {username: user_params[:username], email: user_params[:email]}).first
-    if user&.authenticate(user_params[:password])
-      save_user(user.id)
-      app_response(message: "Login was successful", status: :OK, data: user)
-    else
-      app_response(message: "Invalid username/email or password", status: :unauthorized)
-    end
+# authenticate the users password and username
+def login
+  user = User.find_by(username: login_params[:username])
+  if user && user.authenticate(login_params[:password])
+    save_user(user.id)
+    app_response(message: "Login was successful", status: :OK, data: user.as_json(except: :password))
+  else
+    app_response(message: "Invalid username or password", status: :unauthorized)
   end
-
+end
   def logout
     remove_user
     app_response(message: "Logged out successfully", status: :OK)
@@ -28,8 +26,21 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.permit(:username, :email, :password_digest)
+  def register_params
+    params.permit(:username, :email, :password)
   end
 
+  def login_params
+    params.permit(:username, :password)
+  end
+
+
 end
+
+
+# if user&.authenticate(user_params[:password])
+#   save_user(user.id)
+#   app_response(message: "Login was successful", status: :OK, data: user)
+# else
+#   app_response(message: "Invalid username/email or password", status: :unauthorized)
+# end
