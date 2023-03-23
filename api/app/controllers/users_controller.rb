@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def register
     user = User.new(user_params)
     if user.save
-      app_response message: "Registration successful", status: :created, data: user
+      app_response message: "Registration successful", status: :created, data: user.as_json(except: :password_digest)
     else
       app_response message: "Registration failed", status: :unprocessable_entity, data: user.errors
     end

@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 
 export default function Login() {
@@ -8,42 +9,62 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const fetchLogin = () =>{
-    console.log("logging in: ")
-    console.log("username/email:", username)
-    console.log("password:", password)
-  }
-
-  const fetchSignUp = () =>{
-    console.log("signing up: ")
-    console.log("username:", username)
-    console.log("email:", email)
-    console.log("password:", password)
-  }
-
-  const toggleForm = () => {
-    setIsLogin(!isLogin);
+  const fetchLogin = () => {
+    console.log(`logging in: \nusername/email: ${username}\npassword: ${password}`);
   };
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const fetchSignUp = async () => {
+    console.log(`signing up: \nusername: ${username}\nemail: ${email}\npassword: ${password}`);
+
+    try {
+      const response = await fetch("http://localhost:3000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            username,
+            email,
+            password_digest: password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.status === 201 && data.message === "Registration successful") {
+        alert("Registration successful. Please log in.");
+        window.location.href = "/login"; // redirect to login page
+      }
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  const toggleForm = () => setIsLogin(!isLogin);
+
+  const handleInputChange = (event, inputType) => {
+    const value = event.target.value;
+    switch (inputType) {
+      case "username":
+        setUsername(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      case "confirmPassword":
+        setConfirmPassword(value);
+        break;
+      default:
+        break;
+    }
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleConfirmPasswordChange = (event) => {
-    setConfirmPassword(event.target.value);
-  };
-
-  const handleShowPasswordClick = () => {
-    setShowPassword(!showPassword);
-  };
+  const handleShowPasswordClick = () => setShowPassword(!showPassword);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -67,87 +88,101 @@ export default function Login() {
     }
   };
 
-  return (<div className="container">
-  <div className="row justify-content-center mt-5">
-    <div className="col-md-6">
-      <div className="card">
-        <div className="card-body">
-          <h1>{isLogin ? "Login" : "Sign Up"}</h1>
-          <form onSubmit={handleSubmit}>
-            {isLogin ? (
-              <div className="mb-3">
-                <label className="form-label">Username/Email</label>
-                <input type="text" className="form-control" value={username} onChange={handleUsernameChange} />
-              </div>
-            ) : (
-              <div>
+  return (
+    <div className="container">
+      <div className="row justify-content-center mt-5">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-body">
+              <h1>{isLogin ? "Login" : "Sign Up"}</h1>
+              <form onSubmit={handleSubmit}>
+                {isLogin ? (
+                  <div className="mb-3">
+                    <label className="form-label">Username/Email</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={username}
+                      onChange={(event) => handleInputChange(event, "username")}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <div className="mb-3">
+                      <label className="form-label">Username</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={username}
+                        onChange={(event) => handleInputChange(event, "username")}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label">Email</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={email}
+                        onChange={(event) => handleInputChange(event, "email")}
+                      />
+                    </div>
+                  </div>
+                )}
                 <div className="mb-3">
-                  <label className="form-label">Username</label>
-                  <input type="text" className="form-control" value={username} onChange={handleUsernameChange} />
+                  <label className="form-label">Password</label>
+                  <div className="input-group">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      className="form-control"
+                      value={password}
+                      onChange={(event) => handleInputChange(event, "password")}
+                    />
+                    <button
+                      className="btn btn-outline-secondary"
+                      type="button"
+                      onClick={handleShowPasswordClick}
+                    >
+                      {showPassword ? "Hide" : "Show"}
+                    </button>
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <label className="form-label">Email</label>
-                  <input type="text" className="form-control" value={email} onChange={handleEmailChange}/>
-                </div>
-              </div>
-            )}
-            <div className="mb-3">
-              <label className="form-label">Password</label>
-              <div className="input-group">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  className="form-control"
-                  value={password}
-                  onChange={handlePasswordChange}
-                />
-                <button
-                  className="btn btn-outline-secondary"
-                  type="button"
-                  onClick={handleShowPasswordClick}
-                >
-                  {showPassword ? "Hide" : "Show"}
+                {!isLogin && (
+                  <div className="mb-3">
+                    <label className="form-label">Confirm Password</label>
+                    <div className="input-group">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        className="form-control"
+                        value={confirmPassword}
+                        onChange={(event) => handleInputChange(event, "confirmPassword")}
+                      />
+                      <button
+                        className="btn btn-outline-secondary"
+                        type="button"
+                        onClick={handleShowPasswordClick}
+                      >
+                        {showPassword ? "Hide" : "Show"}
+                      </button>
+                    </div>
+                  </div>
+                )}
+                <button type="submit" className="btn btn-primary">
+                  {isLogin ? "Login" : "Sign Up"}
                 </button>
-              </div>
+              </form>
+              <hr />
+              <p>
+                {isLogin
+                  ? "Don't have an account?"
+                  : "Already have an account?"}{" "}
+                <button className="btn btn-link" onClick={toggleForm}>
+                  {isLogin ? "Sign up here" : "Login here"}
+                </button>
+              </p>
             </div>
-            {!isLogin && (
-              <div className="mb-3">
-                <label className="form-label">Confirm Password</label>
-                <div className="input-group">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    className="form-control"
-                    value={confirmPassword}
-                    onChange={handleConfirmPasswordChange}
-                  />
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    onClick={handleShowPasswordClick}
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </button>
-                </div>
-              </div>
-            )}
-            <button type="submit" className="btn btn-primary">
-              {isLogin ? "Login" : "Sign Up"}
-            </button>
-          </form>
-          <hr />
-          <p>
-            {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
-            <button className="btn btn-link" onClick={toggleForm}>
-              {isLogin ? "Sign up here" : "Login here"}
-            </button>
-          </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
   );
 }
-
-
-
