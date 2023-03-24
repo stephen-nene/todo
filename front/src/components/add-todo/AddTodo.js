@@ -7,9 +7,30 @@ function AddTodo({ profileData }) {
 
   const addTodo = () => {
     setUserId(profileData.session);
-    // Implement your add-todo logic here
-    console.log("todo added", title, summary);
+    fetch("http://localhost:3000/todos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        todo: {
+          title: title,
+          summary: summary,
+          user_id: userId,
+        },
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("New Todo created: ", data);
+        // TODO: handle successful creation of new Todo
+      })
+      .catch((error) => {
+        console.error("Error creating new Todo: ", error);
+        // TODO: handle error while creating new Todo
+      });
   };
+
 
   return (
     <div

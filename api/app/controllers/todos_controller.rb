@@ -7,14 +7,14 @@ class TodosController < ApplicationController
   end
 
   def create
-      todo = user.todos.create(todo_params)
-      if todo.valid?
-          app_response(status: :created, data: todo)
-        else
-          app_response(status: :unprocessable_entity, data: todo.errors, message: todo.errors.full_messages.join(', '))
-        end
-
+    todo = Todo.new(todo_params)
+    if todo.save
+      app_response(status: :created, data: todo)
+    else
+      app_response(status: :unprocessable_entity, data: todo.errors, message: todo.errors.full_messages.join(', '))
+    end
   end
+
 
   def update
       todo = user.todos.find(params[:id]).update(todo_params)
@@ -26,15 +26,20 @@ class TodosController < ApplicationController
   end
 
   def destroy
-      user.todos.find(params[:id]).destroy
+    todo = user.todos.find(params[:id])
+    if todo.destroy
       app_response(message: 'success', data: { info: 'deleted todo successfully' }, status: 204)
+    else
+      app_response(status: :unprocessable_entity, data: todo.errors, message: todo.errors.full_messages.join(', '))
+    end
   end
+
 
 
   private
 
   def todo_params
-      params.permit(:title, :summary)
+    params.require(:todo).permit(:title, :summary, :user_id)
   end
 
 end

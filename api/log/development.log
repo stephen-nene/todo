@@ -3490,3 +3490,165 @@ Processing by TodosController#index as */*
 Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 1093)
 
 
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:08:51 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met."}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40:in `user'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1517)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:08:52 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met."}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:40:in `user'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1263)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:11:58 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met."}
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | Allocations: 1405)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:12:29 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met.", "user_id"=>2}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | Allocations: 409)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:15:01 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met.", "user_id"=>2}
+Completed 422 Unprocessable Entity in 5ms (Views: 0.8ms | Allocations: 1385)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:15:03 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met.", "user_id"=>2}
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | Allocations: 410)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:16:04 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met.", "user_id"=>2}
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | Allocations: 1382)
+
+
+Started POST "/todos" for 127.0.0.1 at 2023-03-24 13:16:40 +0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"title"=>"Complete assignment", "summary"=>"Finish the React and Rails assignment by next week, ensuring that all requirements are met.", "user_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTodo Create (1.5ms)[0m  [1m[32mINSERT INTO "todos" ("title", "summary", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Complete assignment"], ["summary", "Finish the React and Rails assignment by next week, ensuring that all requirements are met."], ["user_id", 2], ["created_at", "2023-03-24 10:16:40.194796"], ["updated_at", "2023-03-24 10:16:40.194796"]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+Completed 201 Created in 62ms (Views: 0.8ms | ActiveRecord: 7.0ms | Allocations: 15444)
+
+
+Started POST "/todos" for ::1 at 2023-03-24 13:19:25 +0300
+Processing by TodosController#create as */*
+  Parameters: {"title"=>"titl", "summary"=>"summary", "user_id"=>2}
+Completed 422 Unprocessable Entity in 3ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 369)
+
+
+Started POST "/todos" for ::1 at 2023-03-24 13:21:39 +0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"title"=>"titl", "summary"=>"summary", "user_id"=>2}}
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+Completed 422 Unprocessable Entity in 29ms (Views: 1.2ms | ActiveRecord: 4.7ms | Allocations: 4832)
+
+
+Started GET "/todos?user_id=1" for ::1 at 2023-03-24 13:21:53 +0300
+Processing by TodosController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.9ms | Allocations: 1273)
+
+
+Started GET "/todos?user_id=2" for ::1 at 2023-03-24 13:21:57 +0300
+Processing by TodosController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1264)
+
+
+Started GET "/todos?user_id=2" for ::1 at 2023-03-24 13:22:09 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1212)
+
+
+Started GET "/todos?user_id=1" for ::1 at 2023-03-24 13:22:23 +0300
+Processing by TodosController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1145)
+
+
+Started POST "/todos" for ::1 at 2023-03-24 13:22:45 +0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"title"=>"Finish homework\"", "summary"=>"Complete all math problems and write a book report", "user_id"=>""}}
+Completed 422 Unprocessable Entity in 4ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 1233)
+
+
+Started POST "/todos" for ::1 at 2023-03-24 13:23:28 +0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"title"=>"Finish homework\"", "summary"=>"Complete all math problems and write a book report", "user_id"=>2}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTodo Create (1.1ms)[0m  [1m[32mINSERT INTO "todos" ("title", "summary", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Finish homework\""], ["summary", "Complete all math problems and write a book report"], ["user_id", 2], ["created_at", "2023-03-24 10:23:28.159581"], ["updated_at", "2023-03-24 10:23:28.159581"]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+Completed 201 Created in 27ms (Views: 0.8ms | ActiveRecord: 5.8ms | Allocations: 4669)
+
+
+Started POST "/todos" for ::1 at 2023-03-24 13:23:44 +0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"title"=>"Finish homework\"", "summary"=>"Complete all math problems and write a book report", "user_id"=>2}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("title", "summary", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Finish homework\""], ["summary", "Complete all math problems and write a book report"], ["user_id", 2], ["created_at", "2023-03-24 10:23:44.252683"], ["updated_at", "2023-03-24 10:23:44.252683"]]
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:11:in `create'
+Completed 201 Created in 41ms (Views: 0.7ms | ActiveRecord: 10.0ms | Allocations: 5403)
+
+
+Started GET "/todos?user_id=2" for ::1 at 2023-03-24 13:23:48 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1451)
+
+
+Started GET "/todos?user_id=2" for ::1 at 2023-03-24 13:23:55 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"2"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1451)
+
+
