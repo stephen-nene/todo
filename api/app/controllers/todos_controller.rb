@@ -26,7 +26,7 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    todo = user.todos.find(params[:id])
+    todo = Todo.find(params[:id])
     if todo.destroy
       app_response(message: 'success', data: { info: 'deleted todo successfully' }, status: 204)
     else

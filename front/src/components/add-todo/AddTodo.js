@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 
 function AddTodo({ profileData }) {
   const [userId, setUserId] = useState("");
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
 
-  const addTodo = () => {
+  useEffect(() => {
     setUserId(profileData.session);
+  }, [profileData.session]);
+
+  const addTodo = () => {
     fetch("http://localhost:3000/todos", {
       method: "POST",
       headers: {

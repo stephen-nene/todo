@@ -1,25 +1,36 @@
-user1 = User.find(1)
-user2 = User.find(2)
+require 'faker'
 
-Todo.create([
+# create users
+User.create([
   {
-    title: 'Finish homework',
-    summary: 'Complete all math problems and write a book report',
-    user: user1
+    username: 'User1',
+    email: 'user1@example.com',
+    password: 'password'
   },
   {
-    title: 'Buy groceries',
-    summary: 'Pick up milk, bread, and eggs from the store',
-    user: user1
-  },
-  {
-    title: 'Clean house',
-    summary: 'Vacuum the carpets, do laundry, and wash the dishes',
-    user: user2
-  },
-  {
-    title: 'Attend meeting',
-    summary: 'Join the team call and provide status update on the project',
-    user: user2
+    username: 'User2',
+    email: 'user2@example.com',
+    password: 'password'
   }
 ])
+
+# get users
+user1 = User.find_by(email: 'user1@example.com')
+user2 = User.find_by(email: 'user2@example.com')
+
+# create tasks
+10.times do
+  Todo.create(
+    title: Faker::Lorem.sentence(word_count: 3),
+    summary: Faker::Lorem.sentence(word_count: 10),
+    user: user1
+  )
+end
+
+10.times do
+  Todo.create(
+    title: Faker::Lorem.sentence(word_count: 3),
+    summary: Faker::Lorem.sentence(word_count: 10),
+    user: user2
+  )
+end
