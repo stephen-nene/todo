@@ -50,7 +50,9 @@ class ApplicationController < ActionController::API
   def set_cookie_options
     cookies.signed[:_session_id] = {
       httponly: true,
-      expires: 6.hours.from_now
+      expires: 6.hours.from_now,
+      same_site: :none,
+      secure: Rails.env.production? # only set secure flag in production environment
     }
   end
 end

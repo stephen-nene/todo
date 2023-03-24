@@ -13,11 +13,10 @@ function App() {
 
   useEffect(() => {
     console.log(profileData);
-        // Check if the cookie is set
-        const userCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('user_id='));
-        if (userCookie) {
-          setIsLoggedIn(true);
-        }
+    // Check if the session JSON key has a value
+    if (profileData && profileData.session) {
+      setIsLoggedIn(true);
+    }
   }, [profileData]);
 
   function handleLogin(data){
@@ -38,7 +37,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={ <Home/> }/>
           <Route path="/add-todo" element={<AddTodo/>} />
-          <Route path="/profile" element={<Profile  profiledata={profileData} />} />
+          <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn}  profiledata={profileData} />} />
         </Routes>
     </BrowserRouter>
     );

@@ -1,10 +1,12 @@
 import React from "react";
 import buggati from "../../images/bugatti4.webp";
 
-function Profile() {
+function Profile({ setIsLoggedIn, profileData }) {
   const handleLogout = () => {
+    setIsLoggedIn(false)
     // Implement your logout logic here
     console.log("User logged out");
+    console.log(profileData);
   };
 
   return (
