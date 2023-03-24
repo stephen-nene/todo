@@ -3,10 +3,10 @@ import "./home.css";
 import Delete from "../../images/delete.png";
 import Update from "../../images/update.png";
 import Done from "../../images/done.png";
-import { todos as todosData } from "../../images/data";
+// import { todos as todosData } from "../../images/data";
 
-export default function Home() {
-  const [todos, setTodos] = useState(todosData);
+export default function Home({userId}) {
+  const [todos, setTodos] = useState();
 
   const deleteTodo = (id) => {
     setTodos((prevTodos) =>
@@ -32,7 +32,14 @@ export default function Home() {
   };
 
   const refresh = () => {
-    console.log("refreshed successfully");
+    fetch(`http://localhost:3000/todos?user_id=${userId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const todosWithId = data.data.map((todo, index) => ({ ...todo, id: index + 1 }));
+        setTodos(todosWithId);
+        console.log("refreshed todos:", todosWithId);
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
@@ -40,7 +47,7 @@ export default function Home() {
       <h1>TO-DOs</h1>
       <button onClick={refresh}>refresh</button>
 
-      {todos.map((todo) => (
+      {todos && todos.map((todo) => (
         <div className="todos" key={todo.id}>
           <p>{todo.id}</p>
           <input

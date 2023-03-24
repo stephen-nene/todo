@@ -35,7 +35,7 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route exact path="/" element={ <Home/> }/>
+          <Route exact path="/" element={ <Home userId={profileData.session} /> }/>
           <Route path="/add-todo" element={<AddTodo profileData={profileData }/>} />
           <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn}  profileData={profileData} />} />
         </Routes>
