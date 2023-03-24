@@ -2,6 +2,9 @@ class ApplicationController < ActionController::API
   include ActionController::Cookies
   wrap_parameters format: []
 
+  # Set httponly option to true
+  before_action :set_cookie_options
+
   rescue_from StandardError, with: :standard_error
 
   def app_response(message: "success", status: 200, data: nil)
@@ -23,22 +26,31 @@ class ApplicationController < ActionController::API
     session[:expiry] = Time.now
   end
 
-      # check for session expiry
-   def session_expired?
-        session[:expiry] ||= Time.now
-        time_diff = (Time.parse(session[:expiry]) - Time.now).to_i
-        unless time_diff > 0
-            app_response(message: 'failed', status: 401, data: { info: 'Your session has expired. Please login again to continue' })
-        end
+  # check for session expiry
+  def session_expired?
+    session[:expiry] ||= Time.now
+    time_diff = (Time.parse(session[:expiry]) - Time.now).to_i
+    unless time_diff > 0
+      app_response(message: 'failed', status: 401, data: { info: 'Your session has expired. Please login again to continue' })
     end
+  end
 
-    # get logged in user
-    def user
-        User.find(session[:uid].to_i)
-    end
+  # get logged in user
+  def user
+    User.find(session[:uid].to_i)
+  end
 
-    # rescue all common errors
-    def standard_error(exception)
-        app_response(message: 'failed', data: { info: exception.message }, status: :unprocessable_entity)
-    end
+  # rescue all common errors
+  def standard_error(exception)
+    app_response(message: 'failed', data: { info: exception.message }, status: :unprocessable_entity)
+  end
+
+  private
+
+  def set_cookie_options
+    cookies.signed[:_session_id] = {
+      httponly: true,
+      expires: 6.hours.from_now
+    }
+  end
 end

@@ -11,34 +11,36 @@ export default function Login({handleLogin}) {
   const [userData, setUserdata] = useState();
 
   const fetchLogin = () => {
-    // console.log(`logging in: \nusernamel: ${username}\npassword: ${password}`);
+    const credentials = {
+      username: username,
+      password: password
+    };
 
-      const credentials = {
-        username: username,
-        password: password
-      };
-
-      fetch('http://localhost:3000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-      })
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials),
+      // credentials: 'include' // send cookies with the request
+    })
       .then(response => {
         if (response.ok) {
-          response.json()
-          .then(data => {
-            handleLogin(data.data)
+          response.json().then(data => {
+            handleLogin(data.data);
             setUserdata(data.data);
-          })
-          .catch(error => console.error(error));
+          }).catch(error => console.error(error));
         } else {
-          console.error('Failed to log in');
-          // TODO: handle failed login
+          // handle failed login
+          if (response.status === 401) {
+            console.error('Invalid username/email or password');
+          } else {
+            console.error('Failed to log in');
+          }
         }
-      })
-    };
+      }).catch(error => console.error(error));
+  };
+
 
 
   const fetchSignUp = async () => {
@@ -126,9 +128,10 @@ export default function Login({handleLogin}) {
               <form onSubmit={handleSubmit}>
                 {isLogin ? (
                   <div className="mb-3">
-                    <label className="form-label">Username/Email</label>
+                    <label className="form-label">Username</label>
                     <input
                       type="text"
+                      placeholder="enter you username  ...."
                       className="form-control"
                       value={username}
                       onChange={(event) => handleInputChange(event, "username")}
@@ -140,6 +143,7 @@ export default function Login({handleLogin}) {
                       <label className="form-label">Username</label>
                       <input
                         type="text"
+                        placeholder="enter you password  ...."
                         className="form-control"
                         value={username}
                         onChange={(event) => handleInputChange(event, "username")}

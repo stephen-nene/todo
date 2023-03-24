@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_22_074057) do
+ActiveRecord::Schema.define(version: 2023_03_24_065121) do
+
+  create_table "todos", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "summary", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "priority", default: 0, null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_todos_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -20,4 +31,5 @@ ActiveRecord::Schema.define(version: 2023_03_22_074057) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "todos", "users"
 end

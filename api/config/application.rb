@@ -24,14 +24,24 @@ module Api
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    config.api_only = true
-
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
-    config.action_dispatch.cookies_same_site_protection = :strict
+    config.action_dispatch.cookies_same_site_protection = :lax
+
+# CORS configuration
+config.middleware.insert_before 0, Rack::Cors do
+  allow do
+    origins 'http://localhost:4000'
+    resource '*', headers: :any, credentials: true, methods: [:get, :post, :options, :delete, :put, :patch],
+      expose: ['Access-Control-Allow-Origin']
+  end
+end
+
+
+
 
     # Configuration for the application, engines, and railties goes here.
     #
