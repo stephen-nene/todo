@@ -9,15 +9,15 @@ class UsersController < ApplicationController
     end
   end
 
-# authenticate the users password and username
-def login
-  user = User.find_by(username: login_params[:username])
-  if user && user.authenticate(login_params[:password])
-    save_user(user.id)
-    app_response(message: "Login was successful", status: :OK, data: user.as_json(except: :password))
-  else
-    app_response(message: "Invalid username or password", status: :unauthorized)
-  end
+  def login
+    sql = "username = :username OR email = :email"
+    user = User.where(sql, { username: user_params[:username], email: user_params[:email] }).first
+    if user&.authenticate(user_params[:password])
+        save_user(user.id)
+        app_response(message: 'Login was successful', status: :ok, data: user)
+    else
+        app_response(message: 'Invalid username/email or password', status: :unauthorized)
+    end
 end
   def logout
     remove_user
@@ -25,22 +25,12 @@ end
   end
 
   private
-
-  def register_params
+  def user_params
     params.permit(:username, :email, :password)
-  end
-
-  def login_params
-    params.permit(:username, :password)
-  end
+end
 
 
 end
 
 
-# if user&.authenticate(user_params[:password])
-#   save_user(user.id)
-#   app_response(message: "Login was successful", status: :OK, data: user)
-# else
-#   app_response(message: "Invalid username/email or password", status: :unauthorized)
-# end
+

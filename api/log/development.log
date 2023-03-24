@@ -783,3 +783,1244 @@ Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms | Allocations: 
 NoMethodError (undefined method `authenticate' for #<User id: 1, username: "testuser2", email: "testuser2@example.com", password: [FILTERED], created_at: "2023-03-23 23:25:44.476111000 +0000", updated_at: "2023-03-23 23:25:44.476111000 +0000">):
   
 app/controllers/users_controller.rb:15:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:28:39 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameters: :password_digest, :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameters: :password_digest, :user[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms | Allocations: 4689)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User id: 1, username: "testuser2", email: "testuser2@example.com", password: [FILTERED], created_at: "2023-03-23 23:25:44.476111000 +0000", updated_at: "2023-03-23 23:25:44.476111000 +0000">):
+  
+app/controllers/users_controller.rb:15:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:29:27 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password_digest"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameters: :password_digest, :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameters: :password_digest, :user[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms | Allocations: 11513)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User id: 1, username: "testuser2", email: "testuser2@example.com", password: [FILTERED], created_at: "2023-03-23 23:25:44.476111000 +0000", updated_at: "2023-03-23 23:25:44.476111000 +0000">):
+  
+app/controllers/users_controller.rb:15:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:30:19 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.6ms | Allocations: 11516)
+
+
+  
+NoMethodError (undefined method `authenticate' for #<User id: 1, username: "testuser2", email: "testuser2@example.com", password: [FILTERED], created_at: "2023-03-23 23:25:44.476111000 +0000", updated_at: "2023-03-23 23:25:44.476111000 +0000">):
+  
+app/controllers/users_controller.rb:15:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:30:58 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.2ms | Allocations: 8270)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User id: 1, username: "testuser2", email: "testuser2@example.com", password: [FILTERED], created_at: "2023-03-23 23:25:44.476111000 +0000", updated_at: "2023-03-23 23:25:44.476111000 +0000">
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:15:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:34:10 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2", "password"=>"[FILTERED]"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms | Allocations: 12027)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User id: 1, username: "testuser2", email: "testuser2@example.com", password: [FILTERED], created_at: "2023-03-23 23:25:44.476111000 +0000", updated_at: "2023-03-23 23:25:44.476111000 +0000">
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:15:in `login'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangePasswordToPasswordDigestInUsers (20230323233802)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230323233802"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230322074057)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar NOT NULL, "email" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230322074057"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-23 23:39:50.249098"], ["updated_at", "2023-03-23 23:39:50.249098"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 02:40:02 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"testuser2", "email"=>"testuser2@example.com", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2", "email"=>"testuser2@example.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "testuser2"], ["email", "testuser2@example.com"], ["password_digest", "$2a$12$A49vZ9QHoe5oXn4tcAZ0cedLG2o./8ZoTbeeBODMPqloo39c1WqBi"], ["created_at", "2023-03-23 23:40:03.136046"], ["updated_at", "2023-03-23 23:40:03.136046"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 201ms (Views: 0.3ms | ActiveRecord: 6.3ms | Allocations: 8879)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:40:16 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.2ms | Allocations: 1220)
+
+
+  
+ArgumentError (Unrecognized status code :OK):
+  
+app/controllers/application_controller.rb:5:in `app_response'
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:40:55 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 219ms (ActiveRecord: 1.2ms | Allocations: 7745)
+
+
+  
+ArgumentError (Unrecognized status code :OK):
+  
+app/controllers/application_controller.rb:5:in `app_response'
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:44:55 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 192ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 4295)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:45:01 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 220ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1016)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:45:02 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 229ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 976)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:45:11 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 205ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 8024)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:45:31 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 401 Unauthorized in 227ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 723)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:45:37 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 986)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:45:46 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 213ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 8021)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:47:16 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 1.1ms | Allocations: 1091)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass
+
+  user = User.find_by(username: login_params.delete(:user)[:username])
+                                                          ^^^^^^^^^^^):
+  
+app/controllers/users_controller.rb:14:in `login'
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:48:01 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 193ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3924)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:48:06 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 228ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 634)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 02:48:15 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]", "user"=>{"username"=>"testuser2"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 205ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 4284)
+
+
+Started POST "/login" for ::1 at 2023-03-24 02:59:49 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 1071)
+
+
+Started POST "/login" for ::1 at 2023-03-24 02:59:56 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:05:17 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 584)
+
+
+Started POST "/signup" for ::1 at 2023-03-24 03:05:42 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevonene", "email"=>"mnbvcxzMNBVCXZ", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene", "email"=>"mnbvcxzMNBVCXZ"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mnbvcxzMNBVCXZ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "stevonene"], ["email", "mnbvcxzMNBVCXZ"], ["password_digest", "$2a$12$VnrmPEpRnWqcIJKpwohhsug9c5LujH.X0fOit4mkJ.D/7RFrW2zPe"], ["created_at", "2023-03-24 00:05:42.623150"], ["updated_at", "2023-03-24 00:05:42.623150"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 256ms (Views: 0.6ms | ActiveRecord: 3.3ms | Allocations: 8251)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:06:04 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 187ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 927)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:07:40 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:08:35 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 183ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:18:48 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 190ms (Views: 0.6ms | ActiveRecord: 1.3ms | Allocations: 1375)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:21:54 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 241ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:22:25 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:23:48 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 239ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:26:00 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:26:26 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 237ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:27:36 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 182ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:27:47 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 237ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:27:52 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:08 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:30 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 237ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:33 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 192ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 870)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:34 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 237ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:42 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 239ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:52 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 193ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:28:53 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 871)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:29:19 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 188ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:29:23 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 239ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:29:24 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:29:25 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:33:44 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 240ms (Views: 4.5ms | ActiveRecord: 1.3ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:33:45 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 196ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:33:55 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 233ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:33:58 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 239ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:33:59 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:35:00 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 236ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:35:02 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 186ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:35:09 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:35:10 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 236ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:37:05 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 229ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 871)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:37:11 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:37:12 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 181ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:38:09 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:38:13 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 232ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:39:05 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:39:18 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 182ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:40:36 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 231ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:40:48 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 218ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:40:52 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:41:01 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mnbvcxzMNBVCXZ", "password"=>"[FILTERED]", "user"=>{"username"=>"mnbvcxzMNBVCXZ"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mnbvcxzMNBVCXZ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:41:09 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 186ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 868)
+
+
+Started POST "/signup" for ::1 at 2023-03-24 03:41:39 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"qwerty", "email"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwerty", "email"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwerty"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "qwerty"], ["email", "qwertyuiop"], ["password_digest", "$2a$12$LgF4lFKh0TPlpfgLhTeezO8IQbbpMYP2bkDdsx3YoeeYhwWFtpcDu"], ["created_at", "2023-03-24 00:41:39.997381"], ["updated_at", "2023-03-24 00:41:39.997381"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 239ms (Views: 0.2ms | ActiveRecord: 10.4ms | Allocations: 4859)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:41:47 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:41:51 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:42:01 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwerty", "password"=>"[FILTERED]", "user"=>{"username"=>"qwerty"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwerty"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 868)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:45:25 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:45:28 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 6ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:45:28 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 584)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:45:38 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwerty", "password"=>"[FILTERED]", "user"=>{"username"=>"qwerty"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwerty"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 238ms (Views: 0.7ms | ActiveRecord: 0.1ms | Allocations: 869)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:58:32 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwerty", "password"=>"[FILTERED]", "user"=>{"username"=>"qwerty"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwerty"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 1.7ms | Allocations: 5786)
+
+
+  
+NameError (undefined local variable or method `id' for #<UsersController:0x0000000000ad70>
+
+    session[:user_id] = id
+                        ^^):
+  
+app/controllers/users_controller.rb:16:in `login'
+Started POST "/login" for ::1 at 2023-03-24 03:58:37 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 645)
+
+
+Started POST "/login" for ::1 at 2023-03-24 03:58:57 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 500 Internal Server Error in 222ms (ActiveRecord: 0.1ms | Allocations: 2844)
+
+
+  
+NameError (undefined local variable or method `id' for #<UsersController:0x0000000000ae38>
+
+    session[:user_id] = id
+                        ^^):
+  
+app/controllers/users_controller.rb:16:in `login'
+Started POST "/login" for ::1 at 2023-03-24 03:59:16 +0300
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]", "user"=>{"username"=>"qwertyuiop"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "qwertyuiop"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1071)
+
+
+Started POST "/signup" for ::1 at 2023-03-24 04:00:02 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"stevonene", "email"=>"stevekid705@gmail.com", "password"=>"[FILTERED]", "user"=>{"username"=>"stevonene", "email"=>"stevekid705@gmail.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "stevonene"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "stevekid705@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 242ms (Views: 7.1ms | ActiveRecord: 0.8ms | Allocations: 7025)
+
+
+Started POST "/signup" for ::1 at 2023-03-24 04:00:50 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"mum", "email"=>"mum.com", "password"=>"[FILTERED]", "user"=>{"username"=>"mum", "email"=>"mum.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mum"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mum.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 217ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 3301)
+
+
+Started POST "/signup" for ::1 at 2023-03-24 04:01:12 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"mum", "email"=>"mum.com", "password"=>"[FILTERED]", "user"=>{"username"=>"mum", "email"=>"mum.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mum"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mum.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 422 Unprocessable Entity in 233ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 3238)
+
+
+Started POST "/signup" for ::1 at 2023-03-24 04:01:24 +0300
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"mummy", "email"=>"mum.com", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy", "email"=>"mum.com"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mum.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "mummy"], ["email", "mum.com"], ["password_digest", "$2a$12$6aK6gdYBKKjLoThIvj.GLuffzfRMR287hDU5PwBqxXD9roeb/9cBq"], ["created_at", "2023-03-24 01:01:24.803840"], ["updated_at", "2023-03-24 01:01:24.803840"]]
+  ↳ app/controllers/users_controller.rb:5:in `register'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:5:in `register'
+Completed 201 Created in 244ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 5466)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:01:37 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 230ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 922)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:02:38 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 193ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 4092)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:07:54 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 225ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1316)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:07:58 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 235ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 810)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:08:47 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 195ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 810)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:09:16 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]", "user"=>{"username"=>"mummy"}}
+[31mUnpermitted parameter: :user[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+[31mUnpermitted parameter: :user[0m
+Completed 200 OK in 204ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 7716)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:10:59 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 198ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 6165)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:14:50 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 2.5ms | Allocations: 8202)
+
+
+  
+NameError (undefined local variable or method `sessions' for #<UsersController:0x000000000079e0>
+
+    sessions[:user_id] = user.id
+    ^^^^^^^^
+Did you mean?  session):
+  
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:15:01 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 2.6ms | Allocations: 2790)
+
+
+  
+NameError (undefined local variable or method `sessions' for #<UsersController:0x00000000007ad0>
+
+    sessions[:user_id] = user.id
+    ^^^^^^^^
+Did you mean?  session):
+  
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:15:04 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.1ms | Allocations: 2771)
+
+
+  
+NameError (undefined local variable or method `sessions' for #<UsersController:0x00000000007b98>
+
+    sessions[:user_id] = user.id
+    ^^^^^^^^
+Did you mean?  session):
+  
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:15:10 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 1.8ms | Allocations: 8035)
+
+
+  
+NameError (undefined local variable or method `sessions' for #<UsersController:0x000000000087f0>
+
+    sessions[:user_id] = user.id
+    ^^^^^^^^
+Did you mean?  session):
+  
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:15:11 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 232ms (ActiveRecord: 0.1ms | Allocations: 2767)
+
+
+  
+NameError (undefined local variable or method `sessions' for #<UsersController:0x00000000008868>
+
+    sessions[:user_id] = user.id
+    ^^^^^^^^
+Did you mean?  session):
+  
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:15:22 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 212ms (Views: 0.2ms | ActiveRecord: 1.5ms | Allocations: 6351)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:15:35 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 188ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 6282)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/application_controller.rb:6:in `app_response'
+app/controllers/users_controller.rb:19:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:15:57 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 193ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 6204)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:18:47 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 500 Internal Server Error in 212ms (ActiveRecord: 1.7ms | Allocations: 8090)
+
+
+  
+NameError (undefined local variable or method `id' for #<UsersController:0x0000000000b9c8>
+
+    session[:user_id] = id
+                        ^^):
+  
+app/controllers/users_controller.rb:17:in `login'
+Started POST "/login" for ::1 at 2023-03-24 04:18:57 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 193ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 6264)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:20:53 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:14:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 100519ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 59984)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:22:43 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "mummy"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 491981ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 49703)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:31:05 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"mummy", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'mummy' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 201ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 9176)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:31:15 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevekid705@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'stevekid705@gmail.com' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 801)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:31:22 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"qwertyuiop", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'qwertyuiop' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 774)
+
+
+Started POST "/login" for ::1 at 2023-03-24 04:31:28 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"stevonene", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'stevonene' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `login'
+Completed 200 OK in 219ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1030)
+
+

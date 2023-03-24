@@ -1,17 +1,45 @@
 
 import React, { useState } from "react";
 
-export default function Login() {
+export default function Login({handleLogin}) {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [userData, setUserdata] = useState();
 
   const fetchLogin = () => {
-    console.log(`logging in: \nusernamel: ${username}\npassword: ${password}`);
-  };
+    // console.log(`logging in: \nusernamel: ${username}\npassword: ${password}`);
+
+      const credentials = {
+        username: username,
+        password: password
+      };
+
+      fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+      })
+      .then(response => {
+        if (response.ok) {
+          response.json()
+          .then(data => {
+            handleLogin(data.data)
+            setUserdata(data.data);
+          })
+          .catch(error => console.error(error));
+        } else {
+          console.error('Failed to log in');
+          // TODO: handle failed login
+        }
+      })
+    };
+
 
   const fetchSignUp = async () => {
     console.log(`signing up: \nusername: ${username}\nemail: ${email}\npassword: ${password}`);

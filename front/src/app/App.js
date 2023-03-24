@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import Navbar from "../components/navbar/Navbar";
@@ -8,27 +8,37 @@ import AddTodo from "../components/add-todo/AddTodo";
 import Profile from "../components/profile/Profile";
 
 function App() {
-  const [loggedIn, setIsLoggeIn] = useState(false);
-  const [userdata, setuserdata] = useState([]);
+  const [loggedIn, setIsLoggedIn] = useState(false);
+  const [profileData, setProfileData] = useState();
 
+  useEffect(() => {
+    console.log(profileData);
+        // Check if the cookie is set
+        const userCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('user_id='));
+        if (userCookie) {
+          setIsLoggedIn(true);
+        }
+  }, [profileData]);
 
-  function Login(){
-    
+  function handleLogin(data){
+    setProfileData(data);
+    // setIsLoggeIn(false)
   }
+
 
 
   if (loggedIn === false){
     return (
-    <Login setIsLoggeIn={setIsLoggeIn}/>
+    <Login handleLogin={handleLogin} />
     );
   }else{
     return (
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route exact path="/" element= <Home/> />
+          <Route exact path="/" element={ <Home/> }/>
           <Route path="/add-todo" element={<AddTodo/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<Profile  profiledata={profileData} />} />
         </Routes>
     </BrowserRouter>
     );
