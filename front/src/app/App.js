@@ -36,7 +36,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route exact path="/" element={ <Home/> }/>
-          <Route path="/add-todo" element={<AddTodo/>} />
+          <Route path="/add-todo" element={<AddTodo profileData={profileData }/>} />
           <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn}  profileData={profileData} />} />
         </Routes>
     </BrowserRouter>

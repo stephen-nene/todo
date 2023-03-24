@@ -3205,3 +3205,28 @@ Processing by UsersController#login as */*
 Completed 200 OK in 347ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1646)
 
 
+Started GET "/todos" for ::1 at 2023-03-24 12:15:32 +0300
+Processing by TodosController#index as HTML
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | Allocations: 1062)
+
+
+Started POST "/login" for ::1 at 2023-03-24 12:22:43 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:15:in `login'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'testuser2' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `login'
+Completed 200 OK in 323ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 6499)
+
+
+Started POST "/login" for ::1 at 2023-03-24 12:28:37 +0300
+Processing by UsersController#login as */*
+  Parameters: {"username"=>"testuser2", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/users_controller.rb:15:in `login'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username = 'testuser2' OR email = NULL) ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `login'
+Completed 200 OK in 346ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 2204)
+
+
