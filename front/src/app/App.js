@@ -12,7 +12,7 @@ function App() {
   const [profileData, setProfileData] = useState();
 
   useEffect(() => {
-    console.log(profileData);
+    // console.log(profileData);
     // Check if the session JSON key has a value
     if (profileData && profileData.session) {
       setIsLoggedIn(true);
@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={ <Home/> }/>
           <Route path="/add-todo" element={<AddTodo/>} />
-          <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn}  profiledata={profileData} />} />
+          <Route path="/profile" element={<Profile setIsLoggedIn={setIsLoggedIn}  profileData={profileData} />} />
         </Routes>
     </BrowserRouter>
     );

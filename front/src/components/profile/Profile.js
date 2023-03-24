@@ -2,11 +2,12 @@ import React from "react";
 import buggati from "../../images/bugatti4.webp";
 
 function Profile({ setIsLoggedIn, profileData }) {
+
   const handleLogout = () => {
     setIsLoggedIn(false)
     // Implement your logout logic here
     console.log("User logged out");
-    console.log(profileData);
+    console.log(profileData.user);
   };
 
   return (
@@ -17,8 +18,8 @@ function Profile({ setIsLoggedIn, profileData }) {
       <div className="card" style={{ width: "25rem" }}>
         <img src={buggati} alt="..." className="card-img-top" />
         <div className="card-body">
-          <h3 className="card-title">steve-nene</h3>
-          <h6 className="text">Stevekid705@gmail.com</h6>
+          <h3 className="card-title">{profileData.user.username}</h3>
+          <h6 className="text">{profileData.user.email}</h6>
           <p className="card-text">This is a buggati and dont worry much</p>
           <button
             type="button"
