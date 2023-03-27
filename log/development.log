@@ -6545,3 +6545,56 @@ Processing by UsersController#register as */*
 Completed 422 Unprocessable Entity in 826ms (Views: 452.1ms | ActiveRecord: 1.6ms | Allocations: 288791)
 
 
+Started POST "/signup" for ::1 at 2023-03-27 22:55:22 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/home/stevonene/development/moringa/projects/todo/app/controllers/users_controller.rb:22: syntax error, unexpected ')', expecting `end'
+...authorized, data: user.errors))
+...                              ^
+/home/stevonene/development/moringa/projects/todo/app/controllers/users_controller.rb:44: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/users_controller.rb:22: syntax error, unexpected ')', expecting `end'
+app/controllers/users_controller.rb:44: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/users_controller.rb:22: syntax error, unexpected ')', expecting `end'
+app/controllers/users_controller.rb:44: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/todos?user_id=1" for ::1 at 2023-03-27 22:55:36 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 5873)
+
+
+Started GET "/todos?user_id=1" for ::1 at 2023-03-27 22:58:01 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 991)
+
+
+Started GET "/todos?user_id=1" for ::1 at 2023-03-27 22:58:01 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 870)
+
+
+Started GET "/todos?user_id=1" for ::1 at 2023-03-27 22:58:02 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 856)
+
+
+Started GET "/todos?user_id=1" for ::1 at 2023-03-27 22:58:04 +0300
+Processing by TodosController#index as */*
+  Parameters: {"user_id"=>"1"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 870)
+
+
