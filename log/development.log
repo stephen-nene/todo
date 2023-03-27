@@ -6513,3 +6513,35 @@ Processing by UsersController#login as */*
 Completed 200 OK in 325ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1649)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-27 21:41:30 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.0ms | Allocations: 400)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 2894)
+
+
+Started GET "/todos" for 127.0.0.1 at 2023-03-27 21:41:46 +0300
+Processing by TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."user_id" IS NULL[0m
+  ↳ app/controllers/todos_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 4.4ms | ActiveRecord: 1.0ms | Allocations: 4076)
+
+
+Started POST "/signup" for ::1 at 2023-03-27 22:43:09 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#register as */*
+  Parameters: {"username"=>"testuser10", "email"=>"test.user@10", "password"=>"[FILTERED]"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testuser10"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test.user@10"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:6:in `register'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:6:in `register'
+Completed 422 Unprocessable Entity in 826ms (Views: 452.1ms | ActiveRecord: 1.6ms | Allocations: 288791)
+
+
