@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       response.headers['Access-Control-Allow-Credentials'] = 'true'
       app_response(message: 'Login was successful', status: :ok, data: { user: user, session: session[:uid] })
     else
-      app_response(message: 'Invalid username/email or password', status: :unauthorized, data: user.errors))
+      app_response(message: 'Invalid username/email or password', status: :unauthorized, data: user.errors)
     end
   end
 
